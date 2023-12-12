@@ -71,7 +71,7 @@ export class SocialProfilesManagementComponent {
     }
 
     insertData(){
-
+      
       //After Inserting the data
       // this.getData();
       return;
