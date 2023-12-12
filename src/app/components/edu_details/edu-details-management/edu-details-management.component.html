@@ -1,0 +1,32 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>S.no</th>
+        <th>Studied</th>
+        <th>School/Institution name</th>
+        <th>Grade/CGPA</th>
+        <th>Graduation year</th>
+        <th>Certificate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let i = index">
+          <td>{{ i + 1 }}</td> -->
+      <tr>
+        <td>1</td>
+        <td>10th Class</td>
+        <td>Kv</td>
+        <td>8.9</td>
+        <td>2018</td>
+        <td>
+          <a [href]=edu_cert target="_blank">
+            <img class="image_class" src="{{ edu_cert }}" alt="Certificate" /></a>
+          
+        </td> 
+      </tr>
+    </tbody>
+  </table>
+  <button>Edit</button>
+  <button>Add</button>
+</div>

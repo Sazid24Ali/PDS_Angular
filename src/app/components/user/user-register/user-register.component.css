@@ -1,0 +1,157 @@
+h2 {
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius:5px;
+  cursor: pointer;
+  height: auto;
+  width: 130px;
+  margin-top: 10px;
+  font-size: medium;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Center the form horizontally */
+form {
+  text-align: center;
+}
+
+/* Add some spacing between the input fields and the button */
+.form-group:last-child {
+  margin-bottom: 20px;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+.login-link {
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.styled-file-input {
+  display: none; /* Hide the default file input */
+}
+
+
+.profile-label {
+  margin-right: 10px;
+}
+
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px; /* Add some space between the button and the file name */
+}
+
+.file-upload-text{
+  background-color: #4caf50;
+  color: #fff;
+  padding: 6px 10px; /* Make the button smaller */
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form-group_picture{
+  text-align: auto;
+  margin-bottom: 5px;
+}
+
+.file-name{
+  text-align: center;
+  font-size:medium;
+  margin-bottom: 15px;
+}
+.file-name_{
+  color: green;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.file-input-container {
+  display: flex;
+  align-items: center;
+  display: inline-block;
+  margin-left: 25px;
+  
+}
+.file-label-container{
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.error-message_bottom {
+  color: #ec0707;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}

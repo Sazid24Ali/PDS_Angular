@@ -1,0 +1,94 @@
+<div *ngIf="submit_response">
+  <label [innerHTML]="submit_msg" style="text-align: center;color: red;font-size: medium;"></label>
+</div>
+
+<div *ngIf="success">
+    <label style="color: green;text-align: center;font-size: large;">Generated Login Credentials Successfully </label> 
+  </div>
+  
+
+<div class="login_registration-container">
+  <h2>Create Your Login Credentials</h2>
+
+  <form (ngSubmit)="onSubmit()" id="LoginForm" #registrationForm="ngForm">
+    <div class="form-group">
+      <label for="username"><span class="required">*</span>Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="loginCreds.username"
+        required
+        pattern=".*\S+.*"
+        title="Please set your User name"
+      />
+      <div
+        *ngIf="
+          registrationForm.controls['username'].invalid &&
+          (registrationForm.controls['username'].dirty ||
+            registrationForm.controls['username'].touched)
+        "
+        class="error-message"
+      >
+        Please enter your User name
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password"><span class="required">*</span>Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="loginCreds.password"
+        required
+        pattern=".*\S+.*"
+        title="Please set your password"
+      />
+      <div
+        *ngIf="
+          registrationForm.controls['password'].invalid &&
+          (registrationForm.controls['password'].dirty ||
+            registrationForm.controls['password'].touched)
+        "
+        class="error-message"
+      >
+        Please enter your Password
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="retypePassword"
+        ><span class="required">*</span>Retype Password:</label
+      >
+      <input
+        type="password"
+        id="retypePassword"
+        name="retypePassword"
+        [(ngModel)]="retypePassword"
+        required
+        pattern=".*\S+.*"
+        title="Please enter your Password Again"
+      />
+      <div
+        *ngIf="
+          registrationForm.controls['retypePassword'].invalid &&
+          (registrationForm.controls['retypePassword'].dirty ||
+            registrationForm.controls['retypePassword'].touched)
+        "
+        class="error-message"
+      >
+        Please Retype the Password
+      </div>
+    </div>
+
+    <div *ngIf="valuesNotEntered" class="error-message_bottom">
+      Please Enter the data
+    </div>
+    <div *ngIf="passwordMismatch" class="error-message_bottom">
+      Passwords do not match. Please retype your password.
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>

@@ -1,0 +1,70 @@
+/* src/app/login/login.component.css */
+
+h2{
+    text-align: center;
+
+}
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin:auto;
+    height:auto;
+    width: 100px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .register-link {
+    margin-top: 15px;
+  }
+  
+  .register-link a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .error-message {
+    color: #ec0707; /* Adjust the text color as needed */
+    margin-top: 10px; /* Adjust the spacing as needed */
+    font-size: 20px; /* Updated font size */
+    font-weight: bold; /* Make the text bold */
+    display: block; /* Ensure it appears like a block element (like a label) */
+    text-align: center;
+  }

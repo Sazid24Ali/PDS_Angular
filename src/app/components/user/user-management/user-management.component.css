@@ -1,0 +1,86 @@
+
+
+.main-container{
+    display: grid;
+    grid-template-rows: 100px 300px ;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    'header header'
+    'main aside';
+    size: 450px auto;
+    text-align: center;
+    /* background-color: black; */
+    gap: 3px;
+    /* border: 3px solid black; */
+}
+
+
+.header{
+    grid-area: header;
+    /* background-color: aqua; */
+}
+
+.picture{
+    grid-area: main;
+    /* background-color: beige;     */
+}
+
+.data{
+    grid-area: aside;
+    /* background-color:cyan; */
+    display: contents;    
+}
+
+.data-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    gap: 2px;
+}
+
+.items,
+.values {
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;  
+    /* For centering the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.items {
+    font-weight: bold;
+}
+
+
+
+.picture img {
+    height: 160px;
+    width: 175px;
+    border-radius: 50%;
+    border: 2px solid black;
+    /* background-color: #252d5d; */
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    
+
+    /* grid-row: span 4;
+    grid-area: -1/1;
+    
+    border-radius: 50%;
+    /* background-color: #252d5d; */
+/*  *//*
+    width: 100%;
+    max-width: 150px; /* Adjust the width of the profile picture 
+    border-radius: 50%;*/
+
+}

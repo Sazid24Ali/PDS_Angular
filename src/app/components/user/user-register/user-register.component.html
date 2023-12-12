@@ -1,0 +1,129 @@
+
+<div *ngIf="submit_response">
+  <h1  [innerHTML]="submit_msg"  style="text-align: center;"></h1>
+</div>
+
+
+<div class="registration-container">
+  <h2>Register</h2>
+
+  <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    
+    <div class="form-group">
+      <label for="firstName"><span class="required">*</span>First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="user.firstName"
+        required
+        pattern=".*\S+.*"
+        title="Please enter your first name"
+      />
+      <div
+        class="firstNameError"
+        *ngIf="
+          registrationForm.controls['firstName'].invalid &&
+          (registrationForm.controls['firstName'].dirty ||
+            registrationForm.controls['firstName'].touched)
+        "
+        class="error-message"
+      >
+        Please enter your first name
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName"><span class="required">*</span>Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="user.lastName"
+        required
+        pattern=".*\S+.*"
+        title="Please enter your lastName name"
+      />
+      <div
+        *ngIf="
+          registrationForm.controls['lastName'].invalid &&
+          (registrationForm.controls['lastName'].dirty ||
+            registrationForm.controls['lastName'].touched)
+        "
+        class="error-message"
+      >
+        Please enter your Last name
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="email"><span class="required">*</span>Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        required
+        pattern=".*\S+.*"
+        title="Please enter your email"
+      />
+      <div
+        *ngIf="
+          registrationForm.controls['email'].invalid &&
+          (registrationForm.controls['email'].dirty ||
+            registrationForm.controls['email'].touched)
+        "
+        class="error-message"
+      >
+        Please enter your email id
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfBirth"><span class="required">*</span>Date of Birth</label>
+      <input
+        type="date"
+        id="dateOfBirth"
+        name="dateOfBirth"
+        [(ngModel)]="user.dateOfBirth" 
+        [max]="getCurrentDate()"
+        onkeypress="return false"
+        title="Please enter your date of birth"
+       >
+    </div>
+
+    <div class="form-group_picture">
+      <div class="file-label-container">
+        <label class="profile-label">Profile Picture</label>
+      </div>
+      
+      <!-- accept="image/*" THis was before -->
+      <div class="file-input-container" >
+        <input
+          class="styled-file-input"
+          type="file"
+          id="profilePicture"
+          name="profilePicture"
+          (change)="onFileSelected($event)"
+          
+          accept=".png, .jpg, .jpeg"
+          required
+        />
+        <label class="file-upload-text" for="profilePicture">Upload Image</label>
+      </div>
+    </div>
+    <span *ngIf="selectedFileName" class="file-name">{{ selectedFileName }} <span class="file-name_" > <br> Uploaded Successfully </span></span>
+
+    <div *ngIf="valuesNotEntered" class="error-message_bottom">
+      Please Enter the data
+    </div>
+    <div>
+      <button class="register-submit-btn" type="submit"> Register </button>
+    </div>
+    
+
+    <div class="login-link" style="text-align: left">
+      <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+  </form>
+</div>

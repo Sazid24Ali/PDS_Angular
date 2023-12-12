@@ -1,0 +1,85 @@
+<div>
+  <!-- <table>
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Platform Name</th>
+          <th>UserName</th>
+          <th>Link To Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <tr *ngFor="let profile of sProfileData , let i = index"> 
+        <td>{{ i + 1 }}</td> 
+        <td> {{ profile.socialPlatformName  }}</td>
+        <td> {{ profile.socialPlatformUsername }}</td>
+        <td>{{ profile.socialPlatformURL }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button>Edit</button>
+    <button>Add</button> -->
+  <!-- your-component.component.html -->
+  <table>
+    <thead>
+      <tr>
+        <th>S.no</th>
+        <th>Platform Name</th>
+        <th>UserName</th>
+        <th>Link To Profile</th>
+        <th *ngIf="showDelete">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let profile of ListsProfileData; let i = index">
+        <!-- <tr  [class.deleted]="profile.isDeleted"> -->
+          <tr>
+          <td>{{ i + 1 }}</td>
+          <td *ngIf="!isEditing">{{ profile.socialPlatformName }}</td>
+          <td *ngIf="isEditing">
+            <input [(ngModel)]="profile.socialPlatformName" />
+          </td>
+          <td *ngIf="!isEditing">{{ profile.socialPlatformUsername }}</td>
+          <td *ngIf="isEditing">
+            <input [(ngModel)]="profile.socialPlatformUsername" />
+          </td>
+          <td *ngIf="!isEditing">{{ profile.socialPlatformURL }}</td>
+          <td *ngIf="isEditing">
+            <input [(ngModel)]="profile.socialPlatformURL" />
+          </td>
+          <td *ngIf="showDelete">
+            <button (click)="deleteRow(profile)">X</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <button *ngIf="!isEditing && !showNewRow" (click)="toggleEditMode(true)">Edit</button>
+  <button *ngIf="!isEditing && !showNewRow " (click)="showNewRow = true">Add</button>
+  <div *ngIf="showNewRow" >
+    <table style="margin: auto;">
+      <tr>
+        <td><label for="socialPlatformName">Enter the Platform Name</label></td>
+        <td><label for="socialPlatformUsername">Enter the Username</label></td>
+        <td><label for="socialPlatformURL">Enter the Url</label></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="socialPlatformName" id="socialPlatformName"  [(ngModel)]="newSocialProfile.socialPlatformName"></td>
+        <td><input type="text" name="socialPlatformUsername" id="socialPlatformUsername" [(ngModel)]="newSocialProfile.socialPlatformUsername" ></td>
+        <td><input type="text" name="socialPlatformURL" id="socialPlatformURL" [(ngModel)]="newSocialProfile.socialPlatformURL"></td>
+      </tr>
+    </table>
+    <div *ngIf="!validData"  style="color: red; text-align: center;">
+      <label style="font-size: large;;">Enter the Data</label>
+    </div>
+    
+  
+    <button (click)="addRow()" style="margin-top: 10px;">Add Item</button>
+  </div>
+  
+    
+  <button *ngIf="isEditing"  (click)="saveData()">Save</button>
+  
+  
+</div>
